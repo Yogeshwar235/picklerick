@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pickle Rick..!!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <h2>Serialize</h2>
+        <div class="input-box">
+          <textarea id="serialize-input" placeholder="Enter JSON data"></textarea>
+        </div>
+        <button id="serialize-button">Serialize</button>
+        <div class="output-box">
+          <textarea id="serialize-output" placeholder="Serialized data" readonly></textarea>
+        </div>
+        <p class="highlighted-text">Try deserializing this data ↑</p> 
+      </div>
+      <div class="right-panel">
+        <h2>Deserialize</h2>
+        <div class="input-box">
+          <textarea id="deserialize-input" placeholder="Enter serialized data"></textarea>
+        </div>
+        <button id="deserialize-button">Deserialize</button>
+        <div class="output-box">
+          <textarea id="deserialize-output" placeholder="Deserialized data" readonly></textarea>
+        </div>
+        <div class="output-box">
+          <textarea id="deserialize-disassembly" placeholder="Deserialization disassembly" readonly></textarea>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

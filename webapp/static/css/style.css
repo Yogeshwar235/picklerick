@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.left-panel,
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.left-panel {
+    background-color: #252525;
+    color: white;
+}
+
+.right-panel {
+    background-color: #eee;
+    color: black;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+}
+
+textarea {
+    display: block;
+    width: 90%;
+    height: 20rem;
+    padding: 1rem;
+    margin: 0 0 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    resize: none;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0 0 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+}
+
+.input-box,
+.output-box {
+    width: 90%;
+    padding: 1rem;
+    margin: 0 0 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+#serialize-output,
+#deserialize-input {
+    height: 4rem;
+}
+
+#deserialize-output {
+    height: 8rem;
+}
+#serialize-input,
+#serialize-disassembly,
+#deserialize-disassembly {
+    height: 16rem;
+}
+.highlight-text {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    color: #FFA500;
+  }
+  

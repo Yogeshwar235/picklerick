@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  container1:
+    build:
+      context: container1
+    ports:
+      - "8888:8888"
+
+  container2:
+    build:
+      context: container2

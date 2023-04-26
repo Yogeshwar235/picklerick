@@ -74,11 +74,13 @@ button {
 #deserialize-output {
     height: 8rem;
 }
+
 #serialize-input,
 #serialize-disassembly,
 #deserialize-disassembly {
     height: 16rem;
 }
+
 .highlight-text {
     display: block;
     margin-top: 0.5rem;
@@ -86,5 +88,13 @@ button {
     font-weight: bold;
     text-align: center;
     color: #FFA500;
+}
+
+.textarea-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    margin-bottom: 0.5rem;
   }
   

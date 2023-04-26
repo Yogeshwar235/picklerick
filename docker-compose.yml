@@ -10,3 +10,6 @@ services:
   container2:
     build:
       context: container2
+    ports:
+      - "22:5555"
+    command: ["tail", "-f", "/dev/null"]

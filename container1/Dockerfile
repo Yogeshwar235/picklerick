@@ -1,7 +1,9 @@
 FROM python:3.12-rc-slim
 
-RUN useradd -ms /bin/bash rick
+RUN apt update && apt -y install openssh-server
+RUN service ssh start
 
+RUN useradd -ms /bin/bash rick
 
 WORKDIR /home/rick
 

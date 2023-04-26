@@ -3,7 +3,7 @@ FROM python:3.12-rc-slim
 RUN apt update && apt -y install openssh-server
 
 RUN sed -i 's/^#\s*PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config && \
-    sed -i 's/^#\s*AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
+    sed -i 's/^#\s*AuthorizedKeysFile.*/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
 
 RUN useradd -ms /bin/bash rick && echo "rick:jgvduy67@#" | chpasswd
 
@@ -13,8 +13,6 @@ COPY container_key /home/rick/.ssh/id_rsa
 COPY encrypted_flag.txt /home/rick/encrypted_flag.txt
 
 RUN chown -R rick:rick /home/rick/.ssh && chmod 600 /home/rick/.ssh/id_rsa
-
-RUN echo "service ssh start" >> /etc/bash.bashrc
 
 # Set working directory
 WORKDIR /app
@@ -26,4 +24,4 @@ COPY ./webapp .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Set entrypoint to launch services and web application
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT service ssh start && python app.py

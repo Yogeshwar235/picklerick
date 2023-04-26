@@ -19,8 +19,6 @@ WORKDIR /app
 # Copy web application files to container
 COPY ./webapp .
 
-COPY secret.txt .
-
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 

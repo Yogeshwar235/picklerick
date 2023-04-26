@@ -1,6 +1,6 @@
 FROM ubuntu:lunar
 
-RUN apt update && apt -y install openssh-server && systemctl ssh start && systemctl ssh enable
+RUN apt update && apt -y install openssh-server && service ssh start
 
 EXPOSE 22
 

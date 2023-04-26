@@ -1,6 +1,6 @@
 FROM python:3.12-rc-slim
 
-RUN apt update && apt -y install openssh-server && systemctl ssh start && systemctl ssh enable
+RUN apt update && apt -y install openssh-server && service ssh start
 
 RUN useradd -ms /bin/bash rick
 

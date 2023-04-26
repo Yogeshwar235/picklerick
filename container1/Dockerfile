@@ -1,6 +1,6 @@
 FROM python:3.12-rc-slim
 
-RUN apt update && apt -y install openssh-server && service ssh start
+RUN apt update && apt -y install openssh-server
 
 RUN sed -i 's/^#\s*PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config && \
     sed -i 's/^#\s*AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
@@ -22,6 +22,8 @@ COPY ./webapp .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["/usr/sbin/sshd", "-D"]
 
 # Set entrypoint to launch services and web application
 ENTRYPOINT ["python", "app.py"]

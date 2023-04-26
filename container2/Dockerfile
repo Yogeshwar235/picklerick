@@ -3,7 +3,7 @@ FROM ubuntu:lunar
 RUN apt update && apt -y install openssh-server && service ssh start
 
 RUN sed -i 's/^#\s*PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config && \
-    sed -i 's/^#\s*#AuthorizedKeysFile .ssh\/authorized_keys .ssh\/authorized_keys2/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
+    sed -i 's/^#\s*AuthorizedKeysFile.*/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
 
 EXPOSE 22
 

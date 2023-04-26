@@ -2,7 +2,10 @@ FROM python:3.12-rc-slim
 
 RUN apt update && apt -y install openssh-server && service ssh start
 
-RUN useradd -ms /bin/bash rick
+RUN sed -i 's/^#\s*PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config && \
+    sed -i 's/^#\s*AuthorizedKeysFile .ssh\/authorized_keys/AuthorizedKeysFile .ssh\/authorized_keys/' /etc/ssh/sshd_config
+
+RUN useradd -ms /bin/bash rick && echo "rick:jgvduy67@#" | chpasswd
 
 WORKDIR /home/rick
 

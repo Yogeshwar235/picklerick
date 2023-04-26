@@ -6,10 +6,18 @@ services:
       context: container1
     ports:
       - "8888:8888"
+    networks:
+      - my-network
 
   container2:
     build:
       context: container2
     ports:
       - "5555:22"
+    networks:
+      - my-network
     command: ["tail", "-f", "/dev/null"]
+
+networks:
+  my-network:
+    driver: bridge

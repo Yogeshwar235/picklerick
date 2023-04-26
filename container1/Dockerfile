@@ -14,6 +14,8 @@ COPY encrypted_flag.txt /home/rick/encrypted_flag.txt
 
 RUN chown -R rick:rick /home/rick/.ssh && chmod 600 /home/rick/.ssh/id_rsa
 
+RUN service ssh start
+
 # Set working directory
 WORKDIR /app
 
@@ -22,8 +24,6 @@ COPY ./webapp .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
-CMD ["/usr/sbin/sshd", "-D"]
 
 # Set entrypoint to launch services and web application
 ENTRYPOINT ["python", "app.py"]

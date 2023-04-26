@@ -14,6 +14,6 @@ COPY decryption_key.txt /home/rick/decryption_key.txt
 
 RUN chown -R rick:rick /home/rick/.ssh && chmod 600 /home/rick/.ssh/authorized_keys
 
-EXPOSE 22
+RUN service ssh start
 
-CMD ["/usr/sbin/sshd", "-D"]
+EXPOSE 22

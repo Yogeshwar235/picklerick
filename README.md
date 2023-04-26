@@ -6,6 +6,6 @@ This challenge will require:
 2. Gaining reverse shell access to a container
 3. Decrypting a secret flag
 
-Identify the services running on the hosts, and find the vulnerabilty in the webapp. Use this vulnerability to login to the container The objective is to gain reverse shell access to host1, which contains SSH keys. From this container, use these SSH keys to access container2, which has an SSH server running. 
+The first task is to identify the services that are currently running on the hosts, and then proceed to locate any vulnerabilities in the web application. The next step is to use this vulnerability to gain access to the container and establish a reverse shell connection to host1, which contains valuable SSH keys. With these SSH keys, you can then access container2, which has an active SSH server running.
 
-The final goal is to find and decrypt the encrypted flag from host 1 using decryption key found in host 2. Both the files located in user dir of the containers.
+The ultimate objective is to locate and decrypt the encrypted flag that is present on host1. To achieve this, you will need to find the decryption key that is located on host2. Both the encrypted flag and decryption key are located in the user directory of their respective containers.

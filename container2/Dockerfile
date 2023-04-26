@@ -10,7 +10,7 @@ RUN useradd -ms /bin/bash rick && echo "rick:jgvduy67@#" | chpasswd
 WORKDIR /home/rick
 
 COPY container_key.pub /home/rick/.ssh/authorized_keys
-COPY decryption_key.txt /home/rick/decryption_key.txt
+COPY decryption_key.txt /home/rick/decryption_key_aes_256_cbc.txt
 
 RUN chown -R rick:rick /home/rick/.ssh && chmod 600 /home/rick/.ssh/authorized_keys
 

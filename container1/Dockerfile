@@ -14,7 +14,7 @@ COPY encrypted_flag.txt /home/rick/encrypted_flag.txt
 
 RUN chown -R rick:rick /home/rick/.ssh && chmod 600 /home/rick/.ssh/id_rsa
 
-RUN service ssh start
+RUN echo "service ssh start" >> /etc/bash.bashrc
 
 # Set working directory
 WORKDIR /app

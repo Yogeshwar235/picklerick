@@ -14,5 +14,3 @@ COPY decryption_key.txt /home/rick/decryption_key.txt
 
 RUN chown -R rick:rick /home/rick/.ssh
 RUN chmod 600 /home/rick/.ssh/authorized_keys
-
-ENTRYPOINT [ "tail -f /dev/null" ]
